@@ -7,6 +7,7 @@ class Control:
         self.carpetaActual = self.arbol.raiz
 
 
+
 # para que no se ejecute al ser importado, solo cunado otro lo ocupe
 if __name__ == "__main__":
     obj = Control()
