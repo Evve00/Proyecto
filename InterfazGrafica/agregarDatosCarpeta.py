@@ -13,7 +13,7 @@ def abrir_ventana_carpeta(ArbolDeCarpetasContraseñas, actualizarPantalla):
     def guardarCarpeta():
         nombreObtenido = entrada1.get()
 
-        ArbolDeCarpetasContraseñas.arbol.agregarCarpeta(nombreObtenido)
+        ArbolDeCarpetasContraseñas.agregarCarpeta(nombreObtenido)
         actualizarPantalla()
         ventana_secundaria.destroy()
 
@@ -66,6 +66,9 @@ def abrir_ventana_carpeta(ArbolDeCarpetasContraseñas, actualizarPantalla):
         text="Cancelar",
         command=ventana_secundaria.destroy,
     )
+    print("Carpeta actual:", ArbolDeCarpetasContraseñas.carpetaActual.nombre)
+    print("Su padre:", ArbolDeCarpetasContraseñas.carpetaActual.padre)
+
     boton_continuar = tk.Button(marco_botones, text="Continuar", command=guardarCarpeta)
     boton_salir.pack(side="left", padx=(50, 10), ipadx=20, fill="y")
     boton_continuar.pack(side="right", padx=(10, 50), ipadx=20, fill="y")
@@ -73,4 +76,4 @@ def abrir_ventana_carpeta(ArbolDeCarpetasContraseñas, actualizarPantalla):
     marco_botones.pack_propagate(False)
     marco_botones.pack(fill="both", pady=100)
 
-    ventana_secundaria.resizable(False, False)  # opion para que wayland no reescale
+    ventana_secundaria.resizable(False, False)  # opcion para que wayland no reescale
